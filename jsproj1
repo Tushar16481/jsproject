@@ -1,0 +1,32 @@
+
+const nfts = [];
+
+
+function mintNFT(nft_name, creator_name,id , date) {
+    const nft = {
+        nft_name: nft_name,
+        creator_name: creator_name,
+        id : id,
+        date: date
+    };
+    nfts.push(nft);
+}
+function listNFTs() {
+    for (let i = 0; i < nfts.length; i++) {
+        console.log(`Name: ${nfts[i].nft_name}`);
+        console.log(`Creator: ${nfts[i].creator_name}`);
+        console.log(`creator id: ${nfts[i].id}`);
+        console.log(`Date Created: ${nfts[i].date}`);
+        console.log();
+    }
+}
+
+function getTotalSupply() {
+    return nfts.length;
+}
+mintNFT("red diamond", "uday", "10001", "2023-05-28");
+mintNFT("gold biscuit", "tushar", "10002", "2023-05-29");
+mintNFT("platinum coin", "tarun", "10003", "2023-05-30");
+
+listNFTs();
+console.log("Total Supply: " + getTotalSupply());
